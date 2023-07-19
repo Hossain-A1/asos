@@ -2,13 +2,14 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { getTransition } from "@/utils/getTransition";
 const Hero = () => {
   return (
     <section className="wrapper section-p h-[calc(100vh-5rem)] border">
       <motion.div
         initial={{ x: "-100vw" }}
         animate={{ x: 0 }}
-        transition={{ delay: 0, duration: 1, ease: "easeInOut" }}
+        transition={getTransition(0.5)}
         className="h-[40vh] w-full"
       >
         <Image
@@ -23,7 +24,7 @@ const Hero = () => {
       <motion.div
         initial={{ x: "100vw" }}
         animate={{ x: 0 }}
-        transition={{ delay: 0, duration: 1.5, ease: "easeInOut" }}
+        transition={getTransition(0.7)}
         className="h-[40vh] w-full mt-5"
       >
         <Image
